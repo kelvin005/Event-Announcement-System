@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Announcement</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📣 Event Announcement System</h1>
+
+    <section class="box">
+      <h2>Subscribe to Event Alerts</h2>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <button id="subscribe-btn">Subscribe</button>
+      <p id="subscribe-msg"></p>
+    </section>
+
+    <section class="box">
+      <h2>Create Event</h2>
+      <input type="text" id="event-title" placeholder="Event Title" />
+      <textarea id="event-desc" placeholder="Event Description"></textarea>
+      <button id="create-btn">Create Event</button>
+      <p id="event-msg"></p>
+    </section>
+  </div>
+
+  <script>
+    const apiBase = "https://48bng4qvc7.execute-api.us-east-2.amazonaws.com/prod";
+
+    document.getElementById("subscribe-btn").addEventListener("click", async () => {
+      const email = document.getElementById("email").value;
+      const msg = document.getElementById("subscribe-msg");
+      msg.textContent = "Subscribing...";
+
+      try {
+        const res = await fetch(`${apiBase}/subscribe`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
+        const data = await res.json();
+        msg.textContent = data.message || "Subscribed!";
+      } catch (err) {
+        msg.textContent = "Subscription failed.";
+        console.error(err);
+      }
+    });
+
+    document.getElementById("create-btn").addEventListener("click", async () => {
+      const title = document.getElementById("event-title").value;
+      const description = document.getElementById("event-desc").value;
+      const msg = document.getElementById("event-msg");
+      msg.textContent = "Creating event...";
+
+      try {
+        const res = await fetch(`${apiBase}/create-event`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title, description }),
+        });
+        const data = await res.json();
+        msg.textContent = data.message || "Event created!";
+      } catch (err) {
+        msg.textContent = "Failed to create event.";
+        console.error(err);
+      }
+    });
+  </script>
+</body>
+</html>
