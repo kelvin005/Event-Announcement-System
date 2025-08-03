@@ -26,8 +26,8 @@ This project demonstrates the use of AWS-managed services to build a scalable, e
 | Email System  | AWS SNS              |
 | Storage       | AWS S3               |
 
-[application architecture] (./assets/event annoncement system architecture.png)
-
+![application architecture](./assets/event-announcement-system-architecture.png)
+cleacl
 
 
 ## 🚀 How It Works
@@ -50,7 +50,8 @@ cd Event-Announcement-System
 terraform apply -auto-approve
 You'll need to configure AWS credentials via aws configure or use a .env with your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
 
-🌍 Live Demo ./assets/event-announcement-system-live-demo.png
+🌍 Live Demo ![Live Demo](./assets/event-announcement-system-live-demo.png)
+
 
 📌 AWS Services in Use
 
