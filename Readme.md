@@ -50,7 +50,7 @@ cd Event-Announcement-System
 terraform apply -auto-approve
 You'll need to configure AWS credentials via aws configure or use a .env with your AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.
 
-🌍 Live Demo ./assets/event-announcement-system-live demo.png
+🌍 Live Demo ./assets/event-announcement-system-live-demo.png
 
 📌 AWS Services in Use
 
