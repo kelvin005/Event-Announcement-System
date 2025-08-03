@@ -1,6 +1,6 @@
 region = "us-east-2"
 
-s3_bucket_name = "event-announcement-website-kelechi"
+s3_bucket_name = "event-announcement-bucketv2"
 
 # terraform.tfvars
 lambda_subscribe_zip     = "lambda/subscribe/subscribe.zip"
