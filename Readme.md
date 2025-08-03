@@ -28,6 +28,7 @@ This project demonstrates the use of AWS-managed services to build a scalable, e
 
 ![application architecture](./assets/event-announcement-system-architecture.png)
 
+
 ## 🚀 How It Works
 
 1. User visits the frontend page (hosted on S3)
