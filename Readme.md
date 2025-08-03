@@ -27,8 +27,6 @@ This project demonstrates the use of AWS-managed services to build a scalable, e
 | Storage       | AWS S3               |
 
 ![application architecture](./assets/event-announcement-system-architecture.png)
-cleacl
-
 
 ## 🚀 How It Works
 
